@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "Example",
+  "description": "Example purpose.",
+  "version": "1.0.0",
+  "author": "Vasile Sambor",
+  "icons": {
+    "16": "img/16-icon.png",
+    "32": "img/32-icon.png",
+    "48": "img/48-icon.png",
+    "128": "/img/128-icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/16-icon.png",
+      "32": "img/32-icon.png",
+      "48": "img/48-icon.png",
+      "128": "img/128-icon.png"
+    },
+    "default_popup": "html/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [],
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ]
+}
